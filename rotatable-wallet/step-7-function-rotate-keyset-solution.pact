@@ -42,4 +42,6 @@
       (format "Updated keyset for user {}"
         [id]))
     )
-  )
+)
+
+(create-table users)

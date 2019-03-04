@@ -35,3 +35,5 @@
     ;; 4. Return a message to the user formatted as "Updated name for user [id] to [name]"
 
 )
+
+(create-table users)

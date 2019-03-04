@@ -30,3 +30,5 @@
       k)
   )
 )
+
+(create-table users)

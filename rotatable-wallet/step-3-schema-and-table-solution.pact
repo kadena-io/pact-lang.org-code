@@ -15,3 +15,6 @@
   (deftable users:{user})
 
 )
+
+;; 3. create table named users outside of module
+(create-table users)

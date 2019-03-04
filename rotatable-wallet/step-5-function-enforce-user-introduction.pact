@@ -29,3 +29,5 @@
       ;; 4. Return the value of the keyset
 
 )
+
+(create-table users)

@@ -40,4 +40,6 @@
 
       ;; 4. Return a message describing the update in the format "Updated keyset for user [id]"
 
-  )
+)
+
+(create-table users)

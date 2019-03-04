@@ -37,3 +37,5 @@
       [id new-name]))
 
 )
+
+(create-table users)

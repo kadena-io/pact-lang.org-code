@@ -20,3 +20,5 @@
     ;; 3. Insert a row into the users table at the given id, keyset, and nickname
 
 )
+
+(create-table users)

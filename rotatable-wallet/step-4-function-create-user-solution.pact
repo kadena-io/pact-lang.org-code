@@ -22,4 +22,6 @@
       "keyset": keyset,
       "nickname": nickname
       })
-  )
+)
+
+(create-table users)
