@@ -1,12 +1,12 @@
-;; --------------------------------------------------------
-;;              Step 1: DEFINE KEYSETS
-;; --------------------------------------------------------
+(module rotating-wallet-tutorial 'module-admin-tutorial ;; DELETE THIS LINE BEFORE BEGINNING TUTORIAL 
+  (defun tutorial (tutorial)(tutorial)) ;; DELETE THIS LINE BEFORE BEGINNING TUTORIAL
+  ;; --------------------------------------------------------
+  ;;              Step 1: DEFINE KEYSETS
+  ;; --------------------------------------------------------
 
-;; 1. define and read module-admin keyset
+  ;; 1. define and read module-admin keyset
 
-;; 2. define and read operate-admin keyset
-
-module auth `module-admin()
+  ;; 2. define and read operate-admin keyset
 
 ;; --------------------------------------------------------
 ;;              Step 2: DEFINE MODULE
@@ -69,3 +69,4 @@ module auth `module-admin()
     ;; Update the keyset to the new-keyset for the id in the users table.
 
     ;; Return a message describing the update in the format "Updated keyset for user [id]".
+)
