@@ -1,0 +1,5 @@
+(defun enforce-not-deleted (id:integer)
+  (let ((row (read todo-table (id-key id))))
+    (enforce (not-deleted row)
+      "todo must not be deleted")
+    (id-key id)))
