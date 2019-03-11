@@ -55,7 +55,6 @@
         (update bank-table to-bank
                 { "total-funds": (+ to-bank-bal total-funds) })
         (format "{} paid {} {}" [from-bank to-bank total-funds]))))
-
 )
 
 ;; create table
