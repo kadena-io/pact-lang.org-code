@@ -1,5 +1,5 @@
 ;; ================================================
-;;                  Define Tables
+;;                 3-define-tables
 ;; ================================================
 
 ;; define a table named loans-table using the loans schema

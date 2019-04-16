@@ -1,5 +1,5 @@
 ;; ================================================
-;;               1-module-and-keyset
+;;              1-module-and-keyset
 ;; ================================================
 
 ;; define and read keyset named loans-admin-keyset
@@ -8,11 +8,11 @@
 
 
 ;; ================================================
-;;               2-define-schemas
+;;              2-define-schemas
 ;; ================================================
 
 ;; ------------------------------------------------
-;;                  2.1-loan
+;;                   2.1-loan
 ;; ------------------------------------------------
 
 ;; define schema named loan with the column names and types as shown
@@ -44,7 +44,7 @@
 
 
     ;; ------------------------------------------------
-    ;;              2.3-loan-inventory
+    ;;             2.3-loan-inventory
     ;; ------------------------------------------------
 
   ;; define schema named loan-inventory with the column names and types as shown

@@ -1,5 +1,5 @@
 ;; ================================================
-;;               Module and Keyset
+;;               1-module-and-keyset
 ;; ================================================
 
 ;; define and read keyset named loans-admin-keyset
@@ -8,11 +8,11 @@
 (module loans 'loans-admin-keyset
 
 ;; ================================================
-;;               Define Schemas
+;;               2-define-schemas
 ;; ================================================
 
 ;; ------------------------------------------------
-;;                    1-loan
+;;                  2.1-loan
 ;; ------------------------------------------------
 
 ;; define schema named loan with the column names and types as shown
@@ -28,7 +28,7 @@
     )
 
     ;; ------------------------------------------------
-    ;;               2-loan-history
+    ;;              2.2-loan-history
     ;; ------------------------------------------------
 
   ;; define schema named loan-history with the column names and types as shown
@@ -44,7 +44,7 @@
     )
 
     ;; ------------------------------------------------
-    ;;              3-loan-inventory
+    ;;              2.3-loan-inventory
     ;; ------------------------------------------------
 
   ;; define schema named loan-inventory with the column names and types as shown
@@ -53,9 +53,9 @@
     balance:integer
     )
 
-  ;; ================================================
-  ;;                  Define Tables
-  ;; ================================================
+    ;; ================================================
+    ;;                 3-define-tables
+    ;; ================================================
 
   ;; define a table named loans-table using the loans schema
   (deftable loans-table:{loan})
@@ -66,7 +66,7 @@
 
 
   ;; ================================================
-  ;;               Define Consts
+  ;;               4-define-consts
   ;; ================================================
 
   ;; define constant named INITIATED including comment "initiated"
@@ -75,12 +75,12 @@
   (defconst ASSIGNED "assigned")
 
   ;; ================================================
-  ;;               Define Functions
+  ;;               5-define-functions
   ;; ================================================
     ;; Create each of the following functions as described in the sections below.
 
   ;; ------------------------------------------------
-  ;;               inventory-key
+  ;;               5.1-inventory-key
   ;; ------------------------------------------------
 
   ;; define a function named inventory-key that takes inputs loanId:string and owner:string
@@ -90,7 +90,7 @@
    )
 
   ;; ------------------------------------------------
-  ;;               create-a-loan
+  ;;               5.2-create-a-loan
   ;; ------------------------------------------------
 
   ;; define a function named create-a-loan that takes the parameters loanId, loanName, entityName, and loanAmount
@@ -113,7 +113,7 @@
       }))
 
   ;; ------------------------------------------------
-  ;;              assign-a-loan
+  ;;              5.3-assign-a-loan
   ;; ------------------------------------------------
 
   ;; define a function named assign-a-loan that takes parameters txid, loanId, buyer, and amount
@@ -153,7 +153,7 @@
         }))
 
   ;; ------------------------------------------------
-  ;;               sell-a-loan
+  ;;               5.4-sell-a-loan
   ;; ------------------------------------------------
 
   ;; define a function named sell-a-loan that takes parameters txid, loanId, buyer, seller, and amount
@@ -189,7 +189,7 @@
         {"balance": (+ prev-buyer-balance amount)}))))
 
   ;; ------------------------------------------------
-  ;;              read-a-loan
+  ;;              5.5-read-a-loan
   ;; ------------------------------------------------
 
   ;; define a function named read-a-loan that takes parameter loanId
@@ -198,7 +198,7 @@
     (read loans-table loanId))
 
   ;; ------------------------------------------------
-  ;;             read-loan-tx
+  ;;             5.6-read-loan-tx
   ;; ------------------------------------------------
 
   ;; define a function named read-loan-tx that takes no parameters
@@ -207,7 +207,7 @@
     (map (txlog loans-table) (txids loans-table 0)))
 
   ;; ------------------------------------------------
-  ;;              read-all-loans
+  ;;              5.7-read-all-loans
   ;; ------------------------------------------------
 
   ;; define a function named read-all-loans that takes no parameters
@@ -216,7 +216,7 @@
     (select loans-table (constantly true)))
 
   ;; ------------------------------------------------
-  ;;              read-inventory-pair
+  ;;              5.8-read-inventory-pair
   ;; ------------------------------------------------
 
   ;; define a function named read-inventory-pair that takes a parameter named key
@@ -228,7 +228,7 @@
     )
 
   ;; ------------------------------------------------
-  ;;            read-loan-inventory
+  ;;            5.9-read-loan-inventory
   ;; ------------------------------------------------
 
   ;; define a function named read-loan-inventory that takes no parameters
@@ -237,7 +237,7 @@
     (map (read-inventory-pair) (keys loan-inventory-table)))
 
   ;; ------------------------------------------------
-  ;;          read-loans-with-status
+  ;;          5.10-read-loans-with-status
   ;; ------------------------------------------------
 
   ;; define a function named read-loans-with-status that takes the parameter status
@@ -247,7 +247,7 @@
   )
 
 ;; ================================================
-;;               Create Tables
+;;                 6-create-tables
 ;; ================================================
 
 ;; create loans-table

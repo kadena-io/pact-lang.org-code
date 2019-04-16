@@ -1,5 +1,5 @@
 ;; ================================================
-;;               Module and Keyset
+;;               1-module-and-keyset
 ;; ================================================
 
 ;; define and read keyset named loans-admin-keyset
