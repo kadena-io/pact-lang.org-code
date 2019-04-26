@@ -19,7 +19,6 @@
 
   (defschema loan-inventory
     balance:integer
-    ;date:time
     )
 
   (deftable loans-table:{loan})

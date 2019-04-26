@@ -245,6 +245,7 @@
     ;; select all values from the loans-table where "status" equals the parameter status
 
 
+;; final parenthesis to close module
 
 ;; ================================================
 ;;                 6-create-tables
