@@ -10,5 +10,5 @@
       (update users id { "keyset": new-keyset})
       ;; return a message describing the update in the format "Updated keyset for user [id]"
       (format "Updated keyset for user {}"
-        [id]))
+        [id])
     )

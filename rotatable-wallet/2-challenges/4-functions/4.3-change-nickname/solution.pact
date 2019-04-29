@@ -10,4 +10,5 @@
     (update users id { "nickname": new-name })
     ;; return a message to the user formatted as "Updated name for user [id] to [name]"
     (format "Updated name for user {} to {}"
-      [id new-name]))
+      [id new-name])
+  )
