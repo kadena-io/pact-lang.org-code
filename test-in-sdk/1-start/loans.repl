@@ -1,0 +1,55 @@
+;; ========================================================
+;;                1-load-environment-data
+;; ========================================================
+
+;; set transaction signature key to loansadmin
+
+;; set environment data to the loans-admin-keyset with keys loansadmin and predicate function of keys-all
+
+
+
+;; ========================================================
+;;                 2-load-pact-file
+;; ========================================================
+
+;; begin a transaction
+
+;; load loans.pact into the REPL
+
+;; commit the transaction
+
+
+;; ========================================================
+;;                   3-use-module
+;; ========================================================
+
+;; begin a transaction
+
+;; use the loans module
+
+;; call the create-a-loan function and specify an input for each parameter
+
+;; call the assign-a-loan function and specify an input for each parameter
+
+;; call the sell-a-loan function and specify an input for each parameter
+
+;; call the sell-a-loan function and specify an input for each parameter
+
+;; commit the transaction
+
+
+;; ========================================================
+;;                 4-read-loan-status
+;; ========================================================
+
+;; begin a transaction
+
+;; use the loans module
+
+;; read the loan inventory
+
+;; read loans with status of INITIATED
+
+;; read loans with status of ASSIGNED
+
+;; commit the transaction

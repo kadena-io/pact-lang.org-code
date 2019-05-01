@@ -1,0 +1,17 @@
+;; ========================================================
+;;                   3-call-functions
+;; ========================================================
+
+;; begin a transaction
+
+;; use the loans module
+
+;; call the create-a-loan function and specify an input for each parameter
+
+;; call the assign-a-loan function and specify an input for each parameter
+
+;; call the sell-a-loan function and specify an input for each parameter
+
+;; call the sell-a-loan function and specify an input for each parameter
+
+;; commit the transaction

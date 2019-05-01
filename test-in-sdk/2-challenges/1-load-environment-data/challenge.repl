@@ -1,0 +1,7 @@
+;; ========================================================
+;;                1-load-environment-data
+;; ========================================================
+
+;; set transaction signature key to loansadmin
+
+;; set environment data to the loans-admin-keyset with keys loansadmin and predicate function of keys-all

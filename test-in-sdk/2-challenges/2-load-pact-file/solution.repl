@@ -1,0 +1,10 @@
+;; ========================================================
+;;                 2-load-pact-file
+;; ========================================================
+
+;; begin a transaction
+(begin-tx)
+;; load loans.pact into the REPL
+(load "loans.pact")
+;; commit the transaction
+(commit-tx)

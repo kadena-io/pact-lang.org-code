@@ -1,0 +1,15 @@
+;; ========================================================
+;;                    4-read-loans
+;; ========================================================
+
+;; begin a transaction
+
+;; use the loans module
+
+;; read the loan inventory
+
+;; read loans with status of INITIATED
+
+;; read loans with status of ASSIGNED
+
+;; commit the transaction

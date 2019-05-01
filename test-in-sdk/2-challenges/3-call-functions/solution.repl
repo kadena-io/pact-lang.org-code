@@ -1,0 +1,18 @@
+;; ========================================================
+;;                   3-call-functions
+;; ========================================================
+
+;; begin a transaction
+(begin-tx)
+;; use the loans module
+(use loans)
+;; call the create-a-loan function and specify an input for each parameter
+(create-a-loan "loanId-1" "loan1" "Capital One" 50000) ;; loanId, loanName, entityName, amount
+;; call the assign-a-loan function and specify an input for each parameter
+(assign-a-loan "txid-1" "loanId-1" "buyer1" 10000) ;; loanId, buyer, amount
+;; call the sell-a-loan function and specify an input for each parameter
+(sell-a-loan "txid-2" "loanId-1" "buyer2" "buyer1" 2000) ;; loanId, seller, buyer, amount
+;; call the sell-a-loan function and specify an input for each parameter
+(sell-a-loan "txid-3" "loanId-1" "buyer3" "buyer1" 2000) ;; loanId, seller, buyer, amount
+;; commit the transaction
+(commit-tx)

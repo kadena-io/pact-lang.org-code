@@ -1,0 +1,16 @@
+;; ========================================================
+;;                    4-read-loans
+;; ========================================================
+
+;; begin a transaction
+(begin-tx)
+;; use the loans module
+(use loans)
+;; read the loan inventory
+(read-loan-inventory)
+;; read loans with status of INITIATED
+(read-loans-with-status INITIATED)
+;; read loans with status of ASSIGNED
+(read-loans-with-status ASSIGNED)
+;; commit the transaction
+(commit-tx)

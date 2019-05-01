@@ -1,0 +1,56 @@
+;; ========================================================
+;;                1-load-environment-data
+;; ========================================================
+
+;; set transaction signature key to loansadmin
+(env-keys ["loansadmin"])
+;; set environment data to the loans-admin-keyset with keys loansadmin and predicate function of keys-all
+(env-data { "loans-admin-keyset":
+  { "keys": ["loansadmin"], "pred": "keys-all" } })
+
+;; ========================================================
+;;                 2-load-pact-file
+;; ========================================================
+
+;; begin a transaction
+(begin-tx)
+;; load loans.pact into the REPL
+(load "loans.pact")
+;; commit the transaction
+(commit-tx)
+
+;; ========================================================
+;;                   3-call-functions
+;; ========================================================
+
+;; begin a transaction
+(begin-tx)
+;; use the loans module
+(use loans)
+;; call the create-a-loan function and specify an input for each parameter
+(create-a-loan "loanId-1" "loan1" "Capital One" 50000) ;; loanId, loanName, entityName, amount
+;; call the assign-a-loan function and specify an input for each parameter
+(assign-a-loan "txid-1" "loanId-1" "buyer1" 10000) ;; loanId, buyer, amount
+;; call the sell-a-loan function and specify an input for each parameter
+(sell-a-loan "txid-2" "loanId-1" "buyer2" "buyer1" 2000) ;; loanId, seller, buyer, amount
+;; call the sell-a-loan function and specify an input for each parameter
+(sell-a-loan "txid-3" "loanId-1" "buyer3" "buyer1" 2000) ;; loanId, seller, buyer, amount
+;; commit the transaction
+(commit-tx)
+
+;; ========================================================
+;;                    4-read-loans
+;; ========================================================
+
+;; begin a transaction
+(begin-tx)
+;; use the loans module
+(use loans)
+;; read the loan inventory
+(read-loan-inventory)
+;; read loans with status of INITIATED
+(read-loans-with-status INITIATED)
+;; read loans with status of ASSIGNED
+(read-loans-with-status ASSIGNED)
+;; commit the transaction
+(commit-tx)
