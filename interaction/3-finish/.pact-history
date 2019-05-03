@@ -1,0 +1,3 @@
+(load "payments.repl")
+(load "3-payments.repl")
+(load "3-payments.repl")
