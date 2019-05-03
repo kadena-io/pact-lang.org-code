@@ -1,0 +1,29 @@
+;; ========================================================
+;;                 3.4-use-payments-module
+;; ========================================================
+
+;; use the payments module
+
+;; --------------------END OF CHALLENGE -------------------
+
+;create Sarah and James's payment account
+(env-keys ["james"])
+(expect-failure "Sarah's key does not exist" (create-account "Sarah" 0.0))
+(create-account "James" 250.0)
+
+(env-keys ["sarah"])
+(create-account "Sarah" 100.25)
+
+;; do payment, simluating SARAH keyset.
+(pay "Sarah" "James" 25.0)
+(env-keys ["james"])
+;; do payment, simluating James's keyset.
+(pay "James" "Sarah" 100.0)
+
+;; read Balances as Admin
+(env-keys ["admin"])
+
+(expect "Sarah's balance is 75.25" 175.25 (get-balance "Sarah"))
+(expect "James's balance is 275.0" 175.0 (get-balance "James"))
+
+(commit-tx)

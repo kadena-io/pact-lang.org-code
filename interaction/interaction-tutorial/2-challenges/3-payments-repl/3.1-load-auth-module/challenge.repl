@@ -1,0 +1,9 @@
+;; ========================================================
+;;                 3.1-load-auth-module
+;; ========================================================
+
+;; begin a transaction
+
+;; load the auth.pact file
+
+;; commit the transaction

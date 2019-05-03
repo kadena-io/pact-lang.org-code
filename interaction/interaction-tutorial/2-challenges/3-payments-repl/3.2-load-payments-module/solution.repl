@@ -1,0 +1,10 @@
+;; ========================================================
+;;                 3.2-load-payments-module
+;; ========================================================
+
+;; begin a transaction
+(begin-tx)
+;; load the payments.pact file
+(load "payments.pact")
+;; commit the transaction
+(commit-tx)

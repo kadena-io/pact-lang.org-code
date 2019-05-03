@@ -1,0 +1,16 @@
+;; ========================================================
+;;                   3.3-use-auth-module
+;; ========================================================
+(begin-tx)
+
+;; use the auth module
+
+;; --------------------END OF CHALLENGE -------------------
+
+(env-data {"admin-keyset" : ["admin"],
+           "sarah-keyset": ["sarah"],
+           "james-keyset": ["james"]})
+;; Create wallet accounts
+(create-user "admin" "Administrator" 'admin-keyset)
+(create-user "Sarah" "Sarah" 'sarah-keyset)
+(create-user "James" "Jamess" 'james-keyset)
