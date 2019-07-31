@@ -1,0 +1,32 @@
+(begin-tx)
+
+(env-data {"coin-admin-keyset": ["coin-admin"]})
+(env-keys ["coin-admin"])
+(load "my-coin.pact")
+
+(commit-tx)
+
+(begin-tx)
+(env-data {"bob-keyset": ["bob"], "kate-keyset": ["kate"]})
+(env-keys ["kate"])
+
+(use my-coin)
+
+;;Create account bob
+(create-account 'bob (read-keyset 'bob-keyset))
+
+;;TESTING CONDITION FAILURES
+
+;;Testing debit-if
+(expect-failure "Balance is not sufficient" (debit-if 'bob 10.0))
+
+;;Testing refactored debit
+(expect-failure "Balance is not sufficient" (debit 'bob 10.0))
+
+;;Testing credit-if
+(expect-failure "Keysets do not match" (credit-if 'bob (read-keyset 'kate-keyset) 10.0))
+
+;;Testing refactored credit
+(expect-failure "Keysets do not match" (credit 'bob (read-keyset 'kate-keyset) 10.0))
+
+(commit-tx)
