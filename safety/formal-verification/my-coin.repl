@@ -1,0 +1,22 @@
+(begin-tx)
+
+(env-data {"coin-admin-keyset": ["coin-admin"]})
+(env-keys ["coin-admin"])
+(load "my-coin.pact")
+(verify 'my-coin)
+(commit-tx)
+
+(begin-tx)
+(env-data {"bob-keyset": ["bob"], "kate-keyset": ["kate"]})
+(env-keys ["kate", "bob"])
+
+(use my-coin)
+
+;;Fund bob-keyset
+(test-capability (TRANSFER))
+(credit 'bob (read-keyset 'bob-keyset) 10000.0)
+
+(expect-failure "Transfer balance is negative" (transfer 'bob 'module-account (my-coin-guard) -100.0))
+(expect-failure "Sender and receiver is the same" (transfer 'bob 'bob (my-coin-guard) 100.0))
+
+(commit-tx)
