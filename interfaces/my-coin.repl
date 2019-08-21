@@ -1,0 +1,15 @@
+(begin-tx)
+
+(env-data {"coin-admin-keyset": ["coin-admin"]})
+(env-keys ["coin-admin"])
+(load "my-coin-sig.pact")
+(load "my-coin.pact")
+
+(verify 'my-coin)
+
+(commit-tx)
+
+(begin-tx)
+(use my-coin)
+(my-coin-guard)
+(commit-tx)
