@@ -1,0 +1,24 @@
+(begin-tx)
+
+(env-data {"coin-admin-keyset": ["coin-admin"]})
+(env-keys ["coin-admin"])
+(load "my-coin.pact")
+
+(commit-tx)
+
+(begin-tx)
+(env-data {"bob-keyset": ["bob"], "kate-keyset": ["kate"]})
+(env-keys ["kate"])
+
+(use my-coin)
+
+(create-account 'module-account (my-coin-guard))
+(create-account 'bob (read-keyset 'bob-keyset))
+
+(expect-failure "TRANSFER is not in the environment" (credit 'module-account (my-coin-guard) 100.0))
+
+;; Tests the capability TRANSFER, and credit the account.
+(test-capability (TRANSFER))
+(credit 'module-account (my-coin-guard) 100.0)
+
+(commit-tx)
